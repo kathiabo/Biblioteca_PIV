@@ -21,12 +21,12 @@
 
 
 
-<form>
+<form name="editorialForm" novalidate>
     <div class="form-group">
         <label for="editorialId">ID Editorial</label>
         <input 
                class="form-control"
-               id="editorialId" ng-model="editorialActual.id"
+               id="editorialId" ng-model="editorialActual.Id"
                ng-disabled="true"/>
     </div>
     <div class ="form-group">
@@ -34,11 +34,22 @@
         <input
                class="form-control"
                id="editorialNombre"
-               ng-model="editorialActual.nombre"/>
+               name="editorialNombre"
+               ng-model="editorialActual.Nombre"
+               required
+               ng-minlength="3"
+               ng-maxlength="25"/>
+               
+        <div ng-messages="editorialForm.editorialNombre.$error">
+        <div ng-message="required">El nombre de la editorial es requerido</div>
+            <div ng-message="minlength">El nombre de la editorial debe tener mas de 3 caracteres</div>
+            <div ng-message="maxlength">El nombre de la editorial debe tener menos de 25 caracteres</div>
+
+    </div>
     </div>
     <div class="form-group">
-        <button class="btn btn-primary">Salvar</button>
-        <button class="btn btn-default">Cancelar</button>
+        <button ng-disabled="editorialForm.$invalid" ng-click="salvarEditorial()" class="btn btn-primary">{{accionActual}}</button>
+        <button ng-click ="limpiar()" class="btn btn-default">Cancelar</button>
     </div>
 </form>
 <table class="table">
@@ -46,12 +57,15 @@
         <th>ID</th>
         <th>Nombre</th>
         <th></th>
+        <th></th>
     </tr>
     <tr ng-repeat="editorial in editoriales">
-        <td>{{editorial.id}}</td>
-        <td>{{editorial.nombre}}</td>
+        <td>{{editorial.Id}}</td>
+        <td>{{editorial.Nombre}}</td>
         <td>
-            <button class="btn btn-link">Editar</button>
+            <button ng-click="editar(editorial)" class="btn btn-link">Editar</button>
         </td>
+        <td><button ng-click="eliminar(editorial)" class="btn btn-link">Eliminar</button> </td>
     </tr>
+
 </table>
