@@ -1,0 +1,68 @@
+﻿<style>
+    body {
+        background-color: beige;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: left;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <h1><strong>Libro</strong></h1>
+    <h2>Informacion de Libro</h2>
+</body>
+
+
+
+<form name="libroForm" novalidate>
+    <div class="form-group">
+        <label for="libroId">ID Libro</label>
+        <input class="form-control"
+               id="libroId" ng-model="libroActual.Id"
+               ng-disabled="true" />
+    </div>
+    <div class="form-group">
+        <label for="libroNombre">Nombre</label>
+        <input class="form-control"
+               id="libroNombre"
+               name="libroNombre"
+               ng-model="libroActual.Nombre"
+               required
+               ng-minlength="3"
+               ng-maxlength="25" />
+
+        <div ng-messages="libroForm.libroNombre.$error">
+            <div ng-message="required">El nombre de la libro es requerido</div>
+            <div ng-message="minlength">El nombre de la libro debe tener mas de 3 caracteres</div>
+            <div ng-message="maxlength">El nombre de la libro debe tener menos de 25 caracteres</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <button ng-disabled="libroForm.$invalid" ng-click="salvarLibro()" class="btn btn-primary">{{accionActual}}</button>
+        <button ng-click="limpiar()" class="btn btn-default">Cancelar</button>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="libro in libros">
+        <td>{{libro.Id}}</td>
+        <td>{{libro.Nombre}}</td>
+        <td>
+            <button ng-click="editar(libro)" class="btn btn-link">Editar</button>
+        </td>
+        <td><button ng-click="eliminar(libro)" class="btn btn-link">Eliminar</button> </td>
+    </tr>
+
+</table>

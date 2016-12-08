@@ -222,8 +222,11 @@
     <Content Include="Scripts\app\editorial\editorial.template.html" />
     <Content Include="Scripts\app\home\home.controller.js" />
     <Content Include="Scripts\app\home\home.template.html" />
-    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
-    <Content Include="Scripts\app\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
+    <Content Include="Scripts\app\libro\libro.controller.js" />
+    <Content Include="Scripts\app\libro\libro.service.js" />
+    <Content Include="Scripts\app\libro\libro.template.html" />
+    <Content Include="Scripts\app\libro\ngMenuBiblioteca\ngMenuBiblioteca.directive.js" />
+    <Content Include="Scripts\app\libro\ngMenuBiblioteca\ngMenuBiblioteca.template.html" />
     <Content Include="Scripts\app\routes.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

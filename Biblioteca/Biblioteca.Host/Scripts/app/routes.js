@@ -9,6 +9,10 @@ function ($routeProvider) {
             templateUrl: "/Scripts/app/editorial/editorial.template.html",
             controller:"editorialController"
         })
+         .when('/libros', {
+             templateUrl: "/Scripts/app/libros/libro.template.html",
+             controller: "libroController"
+         })
     .otherwise({
         reditectTo: '/'
     })
