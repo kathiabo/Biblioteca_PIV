@@ -40,10 +40,16 @@
                      $scope.obtenerEditoriales();
                      $scope.limpiar();
                      alert('Editorial Eliminada!');
-
+                               
+                 }, function(error)
+                 {
+                     alert('Error al Eliminar editorial');
+            
                  });
-            }
+            
+             }
         }
+
 
         $scope.limpiar = function () {
             $scope.accionActual = 'Agregar'

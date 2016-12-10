@@ -10,7 +10,7 @@ function ($routeProvider) {
             controller:"editorialController"
         })
          .when('/libros', {
-             templateUrl: "/Scripts/app/libros/libro.template.html",
+             templateUrl: "/Scripts/app/libro/libro.template.html",
              controller: "libroController"
          })
     .otherwise({

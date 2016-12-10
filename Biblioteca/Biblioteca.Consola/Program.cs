@@ -12,7 +12,7 @@ namespace Biblioteca.Consola
             {
                 var nuevoLibro = new Libro();
                 nuevoLibro.Nombre = "Otro libro";
-                nuevoLibro.Año = 2000;
+                nuevoLibro.Ano = 2000;
                 context.Libros.Add(nuevoLibro);
                 context.SaveChanges();
 
